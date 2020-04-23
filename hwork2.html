@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊</title>
+</head>
+
+<body>
+    <header>
+        <h1>高雄旅遊網</h1>
+        <div class="select-class">
+            <select name="請選擇行政區" id="selectId">
+                <!-- <option value=""></option> -->
+            </select></div>
+    </header>
+    <section>
+        <h3>熱門行政區</h3>
+        <div class="btn-group">
+            <button type="button" value="苓雅區" class="b btn-purple">苓雅區</button>
+            <button type="button" value="三民區" class="b btn-orange" @click="changeTitle">三民區</button>
+            <button type="button" value="新興區" class="b btn-yellow">新興區</button>
+            <button type="button" value="美濃區" class="b btn-blue">美濃區</button>
+        </div>
+    </section>
+
+    <div>
+        <div class="divide"></div>
+        <h2></h2>
+        <div class="content">
+
+        </div>
+    </div>
+
+
+    <script src="/Users/apple/Desktop/project/vue.js"></script>
+    <script>
+        let testVue = new Vue({
+            el: ".btn-group",
+            data: {},
+            methods: {
+                changeTitle() {
+
+                }
+            },
+        })
+    </script>
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+        /* border: 1px solid black; */
+        margin: 0;
+        padding: 0;
+        font-family: PingFangTC-Regular;
+
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+
+    }
+
+    header {
+
+        background-position: center;
+        background-size: cover;
+        height: 380px;
+        background-image: url(/Users/apple/Downloads/JavaScript_HomeWork-gh-pages/assets/Hero.png);
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 40px;
+        padding-top: 89px;
+        margin-bottom: 96px;
+    }
+
+    .select-class {
+        text-align: center;
+    }
+
+    select {
+        width: 452px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.70);
+        border: 3px solid #FFFFFF;
+        border-radius: 3px;
+        font-size: 18px;
+    }
+
+    section {
+        position: relative;
+        top: -20px;
+        margin: auto;
+        width: 800px;
+        height: 112px;
+        background: #FFFFFF;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+        border-radius: 5px;
+    }
+
+    section h3 {
+
+        font-size: 18px;
+        color: black;
+        padding-left: 26px;
+        padding-top: 13px;
+    }
+
+    .btn-group {
+        margin-left: 51px;
+        margin-right: 146px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .btn-group .b:hover {
+        opacity: .8;
+    }
+
+    .btn-group .b {
+        border-radius: 5px;
+        width: 130px;
+        height: 42px;
+        color: white;
+        font-size: 20px;
+
+    }
+
+    .btn-purple {
+        background: #8A82CC;
+    }
+
+    .btn-orange {
+        background: #FFA782;
+    }
+
+    .btn-yellow {
+        background: #F5D005;
+    }
+
+    .btn-blue {
+        background: #559AC8;
+    }
+
+    .divide {
+        margin-top: 49px;
+        border: 1px dashed #559AC8;
+
+    }
+
+    h2 {
+        font-family: SFNSDisplay;
+        font-size: 36px;
+        color: #8A82CC;
+        text-align: center;
+        margin-top: 65px;
+        margin-bottom: 24px;
+    }
+
+    /* 
+    <div class="content">包住所有卡片的外框
+     <div class='card'>
+        <div class='img-div'>
+        <img class='img-class' src=${contentArray[i].Pic}>
+        <div class='img-text'>
+        <p>${contentArray[i].title}</p>
+        <span>${contentArray[i].Zone}</span>
+        </div>
+        <div class='content'>
+        <div class='time'>${contentArray[i].Opentime}  
+        <div class='add'>${contentArray[i].Add}
+        <div class='tel'>${contentArray[i].Tel}
+            </div>
+     </div>
+    </div>`; */
+
+    .content {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 464px;
+        margin-right: 16px;
+        margin-bottom: 36px;
+        margin-left: 40px;
+        box-shadow: 1px 1px 1px 1px rgb(94, 92, 92);
+    }
+
+    .img-div {
+        display: flex;
+        align-items: flex-end;
+        /*讓子元素img-text對齊此區塊的底線  */
+
+        overflow: hidden;
+        width: 100%;
+        height: 273px;
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .img-text {
+        /* border: 2px solid red; */
+
+        /* 設定寬度才讓space-between發揮效用*/
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 10px;
+
+        /* position: absolute;
+        bottom: 0;
+    }*/
+    }
+
+    .img-text p {
+        color: #FFFFFF;
+        font-size: 24px;
+        /* display: inline; */
+        /* margin-left: 22px; */
+    }
+
+    .img-text span {
+        color: #FFFFFF;
+        font-size: 16px;
+        /* display: inline; */
+        /* margin-right: 22px; */
+    }
+
+    .area-content {
+        height: 118px;
+        display: flex;
+        align-items: right;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: space-evenly;
+    }
+</style>
+
+
+
+
+<script src="/Users/apple/Desktop/project/hjs2.js"></script>
+</body>
+
+</html>
